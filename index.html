@@ -135,26 +135,33 @@
             prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
             console.log(prediction[0].className);
             var resultMessage;
+            var resultCeleb;
             switch (prediction[0].className) {
                 case 'dog':
                     resultMessage = '강아지상'
+                    resultCeleb = '박보영, 임시완, 강다니엘'
                     break;
                 case 'cat':
                     resultMessage = '고양이상'
+                    resultCeleb = '블랙핑크 제니, EXO 시우민'
                     break;
                 case 'fox':
                     resultMessage = '여우상'
+                    resultCeleb = 'ITZY 예지, NU\'EST 민현'
                     break;
                 case 'dino':
                     resultMessage = '공룡상'
+                    resultCeleb = '김우빈, 홍종현'
                     break;
                 case 'rabbit':
                     resultMessage = '토끼상'
+                    resultCeleb = '트와이스 나연, 방탄소년단 정국, NCT 도영'
                     break;
                 default:
                     resultMessage = '알 수 없음'
             }
-            $('.result-message').html(resultMessage);
+
+            $('.result-message').html('당신은 ' + resultMessage + '입니다!' + '<br>' + resultMessage + '연예인 : ' + resultCeleb);
             for (let i = 0; i < maxPredictions; i++) {
                 var r;
                 switch (prediction[i].className) {
