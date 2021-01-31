@@ -164,6 +164,11 @@ body {
     html {
       font-size: 13px;
     }
+    .section1{
+        padding-top: 6%;
+        padding-bottom: 1%;
+        text-align: center;
+    }
     .file-upload{
         height: 50% auto;
         margin:0 auto;
@@ -172,6 +177,7 @@ body {
         /* border: solid 1.5px #f6f7fa; */
         background-color:  #ffffff;
     }
+    
   }
 
 .file-upload{
