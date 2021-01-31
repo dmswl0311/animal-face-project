@@ -164,14 +164,22 @@ body {
     html {
       font-size: 13px;
     }
+    .file-upload{
+        height: 50% auto;
+        margin:0 auto;
+        padding: 8% 0;
+        border-radius: 10px;
+        /* border: solid 1.5px #f6f7fa; */
+        background-color:  #ffffff;
+    }
   }
 
 .file-upload{
     height: 50% auto;
     margin:0 auto;
-    padding: 1% 0;
+    padding: 3% 0;
     border-radius: 10px;
-    border: solid 1.5px #f6f7fa;
+    /* border: solid 1.5px #f6f7fa; */
     background-color:  #ffffff;
 }
 .upload{
