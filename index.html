@@ -18,7 +18,7 @@
         crossorigin="anonymous"></script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-601661f9e31bc8da"></script>
-
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 </head>
 
 <body>
@@ -56,7 +56,11 @@
             </div>
         </div>
         <div class="file-upload-content">
+
             <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+            <div class="spin">
+                <i class="fas fa-spinner fa-3x fa-spin"></i>
+            </div>
             <p class="result-message" style="font-family: 'GmarketSansMedium';"></p>
             <div id="label-container" style="font-family: 'GmarketSansMedium';"></div>
             <br>
@@ -102,6 +106,7 @@
         }
         // run the webcam image through the image model
         async function predict() {
+            $('.spin').hide();
             // predict can take in an image, video or canvas html element
             var image = document.getElementById("face-image")
             const prediction = await model.predict(image, false);
