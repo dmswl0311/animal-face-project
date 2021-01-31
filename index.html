@@ -50,6 +50,7 @@
         </div>
         <div class="file-upload-content">
             <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+            <p class="result-message"></p>
             <div id="label-container"></div>
             <br>
             <div class="image-title-wrap">
@@ -93,6 +94,28 @@
             var image = document.getElementById("face-image")
             const prediction = await model.predict(image, false);
             prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+            console.log(prediction[0].className);
+            var resultMessage;
+            switch (prediction[0].className) {
+                case 'dog':
+                    resultMessage = '강아지상'
+                    break;
+                case 'cat':
+                    resultMessage = '고양이상'
+                    break;
+                case 'fox':
+                    resultMessage = '여우상'
+                    break;
+                case 'dino':
+                    resultMessage = '공룡상'
+                    break;
+                case 'rabbit':
+                    resultMessage = '토끼상'
+                    break;
+                default:
+                    resultMessage = '알 수 없음'
+            }
+            $('.result-message').html(resultMessage);
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
