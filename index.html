@@ -129,8 +129,26 @@
             }
             $('.result-message').html(resultMessage);
             for (let i = 0; i < maxPredictions; i++) {
+                var r;
+                switch (prediction[i].className) {
+                    case 'dog':
+                        r = '강아지'
+                        break;
+                    case 'cat':
+                        r = '고양이'
+                        break;
+                    case 'fox':
+                        r = '여우'
+                        break;
+                    case 'dino':
+                        r = '공룡'
+                        break;
+                    case 'rabbit':
+                        r = '토끼'
+                        break;
+                }
                 const classPrediction =
-                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                    r + " : " + (prediction[i].probability.toFixed(2)) * 100 + "%";
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }
         }
