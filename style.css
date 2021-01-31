@@ -126,9 +126,13 @@ body {
     border-color:#ffffff;
 }
 .section1{
-    padding-top: 5%;
-    padding-bottom: 3%;
+    padding-top: 2%;
+    padding-bottom: 1%;
     text-align: center;
+}
+.p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 @font-face {
     font-family: 'S-CoreDream-8Heavy';
